@@ -1,4 +1,4 @@
-const app = require('../src/app')
+const app = require('../app')
 
 describe('App', () => {
 const app = require('../app')
@@ -8,5 +8,6 @@ describe('App', () => {
         return supertest(app)
             .get('/')
             .expect(200, 'Hello, world!')
-    })
+})
+})
 })
