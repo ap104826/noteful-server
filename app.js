@@ -9,12 +9,8 @@ const notesRouter = require('./notes/notes-router')
 
 const app = express()
 
-const morganOption = (process.env.NODE_ENV === 'production')
-    ? 'tiny'
-    : 'common';
-
-const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common'
-app.use(morgan(morganSetting))
+// const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common'
+app.use(morgan())
 app.use(helmet())
 app.use(cors())
 app.use('/api/folders', foldersRouter)
