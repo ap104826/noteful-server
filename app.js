@@ -30,7 +30,5 @@ app.use('/api/notes', notesRouter)
         }
     res.status(500).json(response)
 })
-const PORT = process.env.PORT || 8000
-
 
 module.exports = app
