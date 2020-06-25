@@ -17,13 +17,14 @@ app.use('/api/folders', foldersRouter)
 app.use('/api/notes', notesRouter)
 
 
-    app.use((error, req, res, next) => {
-        let response
-        if (process.env.NODE_ENV === 'production') {
-            response = { error: { message: 'server error' } }
-        } else {
-            response = { error }
-        }
+app.use((error, req, res, next) => {
+    let response
+    if (process.env.NODE_ENV === 'production') {
+        response = { error: { message: 'server error' } }
+    } else {
+        response = { error: { message: error } }
+    }
+    console.log(error);
     res.status(500).json(response)
 })
 
